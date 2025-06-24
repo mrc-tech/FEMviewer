@@ -1,0 +1,12 @@
+fare in modo che ogni entita' geometrica e' una classe ereditata da una classe geometrica fondamentale che contiene le cose in comune (come il colore e lo spessore e altre cose.)
+
+
+entita' geometriche principali che mi interessano sono:
+ - linee
+ - cerchi
+ - rettangoli
+ - retini
+ - testo
+ - quote
+
+
