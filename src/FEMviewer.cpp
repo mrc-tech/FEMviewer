@@ -94,52 +94,47 @@ int main(int argc, char **argv)
 	double alpha = op.alpha;
 	double theta = op.theta;
 	
-//	Image img(op.img_width,op.img_height);
 	
-	int mul = op.zoom;
+	SVGwriter svg;
+	
+	double raggio = 2; // raggio delle circonferenze che indicano i nodi (percentuale della diagonale del viewBox)
+//	int mul = op.zoom;
 //	int xoff = img.width()/2+op.x_shift;
 //	int yoff = img.height()/2+op.y_shift;
+		
+//	ifstream in_stream("output/Node_disp.out");
+//	int Ndata = std::count_if(std::istreambuf_iterator<char>{in_stream}, {}, [](char c) { return c == '\n'; }); // conta il numero di righe nel file... (metodo efficiente MA SBAGLIATO!!?)
+//	in_stream.close();
 	
-//	int FPS = 50; // Frames Per Seconds target per il video da creare
-	double Dt = 0.01; // timestep in cui e` discretizzato l-output del modello
-//	int skip_istant = (int)(1./(Dt*FPS)); // numero di istanti da skippare per arrivare al FPS target
-	
-	ifstream in_stream("output/Node_disp.out");
-	int Ndata = std::count_if(std::istreambuf_iterator<char>{in_stream}, {}, [](char c) { return c == '\n'; }); // conta il numero di righe nel file... (metodo efficiente MA SBAGLIATO!!?)
-	in_stream.close();
-	
-	
-int frame = 1;
-for(int i=0; i<Ndata; i++){ // NUMERO DI RIGHE DEL FILE DI OUPTUT (quanti istanti temporali ho)
-	
-	printf("\r %d/%d   ", i,Ndata);
-	
-//	if(i % skip_istant != 0) continue; // skippa i frames
-	
-//	img.clear();
 	
 	// disegna il modello indeformato:
-//	img.penColor(100,100,100);
+	for(int i=0; i<mod.nNode(); i++){
+		// disegna i nodi:
+		Node n = project_ortho(mod.getNode(i), alpha,theta);
+		
+		svg.addCirc(n.getX(),n.getY(), raggio);
+	}
 	for(int i=0; i<mod.nElem(); i++){
+		// disegna gli elementi:
 		Node n1 = project_ortho(mod.getNodeMod(mod.getElem(i).iNode()), alpha,theta);
 		Node n2 = project_ortho(mod.getNodeMod(mod.getElem(i).jNode()), alpha,theta);
 		
-//		DrawLine(img, n1.getX(),n1.getY(), n2.getX(),n2.getY(), mul,xoff,yoff);
+		svg.addLine(n1.getX(),n1.getY(), n2.getX(),n2.getY());
 	}
 	
 	// disegna il modello deformato:
-	Model mod_def = loadDisplacements(mod, "output/Node_disp.out", op.scale, i+1); // carica gli spostamenti
-//	img.penColor(255,255,255);
-	for(int i=0; i<mod.nElem(); i++){
-		Node n1 = project_ortho(mod_def.getNodeMod(mod_def.getElem(i).iNode()), alpha,theta);
-		Node n2 = project_ortho(mod_def.getNodeMod(mod_def.getElem(i).jNode()), alpha,theta);
-		
-//		DrawLine(img, n1.getX(),n1.getY(), n2.getX(),n2.getY(), mul,xoff,yoff);
-		if(mod_def.getElem(i).getType() == "str"){ // disegna i nodi degli elementi strutturali
-//			img.circ((int)(n1.getX()*mul)+xoff, -(int)(n1.getY()*mul)+yoff, 3);
-//			img.circ((int)(n2.getX()*mul)+xoff, -(int)(n2.getY()*mul)+yoff, 3);
-		}
-	}
+//	Model mod_def = loadDisplacements(mod, "output/Node_disp.out", op.scale, i+1); // carica gli spostamenti
+////	img.penColor(255,255,255);
+//	for(int i=0; i<mod.nElem(); i++){
+//		Node n1 = project_ortho(mod_def.getNodeMod(mod_def.getElem(i).iNode()), alpha,theta);
+//		Node n2 = project_ortho(mod_def.getNodeMod(mod_def.getElem(i).jNode()), alpha,theta);
+//		
+////		DrawLine(img, n1.getX(),n1.getY(), n2.getX(),n2.getY(), mul,xoff,yoff);
+//		if(mod_def.getElem(i).getType() == "str"){ // disegna i nodi degli elementi strutturali
+////			img.circ((int)(n1.getX()*mul)+xoff, -(int)(n1.getY()*mul)+yoff, 3);
+////			img.circ((int)(n2.getX()*mul)+xoff, -(int)(n2.getY()*mul)+yoff, 3);
+//		}
+//	}
 	
 	
 	
@@ -164,13 +159,11 @@ for(int i=0; i<Ndata; i++){ // NUMERO DI RIGHE DEL FILE DI OUPTUT (quanti istant
 	img.text(img.width()-8*strlen(buf)-10,img.height()-15,buf,IBM_EGA_8x14);
 	*/
 	
-	sprintf(buf, "output/frames/frame%d.bmp", frame++);
 //	img.save_bmp(buf);
 	
 	
-}
 
-	
+	svg.write_file("output.svg");
 	
 	return 0;
 }
@@ -178,23 +171,16 @@ for(int i=0; i<Ndata; i++){ // NUMERO DI RIGHE DEL FILE DI OUPTUT (quanti istant
 // ------------------------------------------------------------------------------------------------------
 
 
-Node project_ortho(Node node, double alpha, double theta, double scale)
+Node project_ortho(Node node, double alpha, double theta)
 {
 	double a = alpha *PI/180;
 	double t = theta *PI/180;
 	
-	Node temp = rotate(rotate(rotate(node, -PI/2,0,0), 0,-a,0), t,0,0); // ruota la visuale
+	Node res = rotate(rotate(rotate(node, -PI/2,0,0), 0,-a,0), t,0,0); // ruota la visuale
 	
-	double x = (1/scale) * temp.getX();
-	double y = (1/scale) * temp.getY();
-	
-	return Node(x,y);
+	return res;
 }
 
-Node project_ortho(Node node, double alpha, double theta)
-{
-	return project_ortho(node, alpha,theta, 1);
-}
 
 
 Node rotate(Node node, double rx, double ry, double rz)

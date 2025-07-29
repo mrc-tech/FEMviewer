@@ -1,0 +1,46 @@
+<svg viewBox="-3.06152e-016 -2.5 13.6603 15.4904" xmlns="http://www.w3.org/2000/svg">
+<circle cx="0.000000" cy="0.000000" r="2.000000%"/>
+<circle cx="-0.000000" cy="8.660254" r="2.000000%"/>
+<circle cx="5.000000" cy="4.330127" r="2.000000%"/>
+<circle cx="5.000000" cy="12.990381" r="2.000000%"/>
+<circle cx="8.660254" cy="6.160254" r="2.000000%"/>
+<circle cx="8.660254" cy="-2.500000" r="2.000000%"/>
+<circle cx="13.660254" cy="1.830127" r="2.000000%"/>
+<circle cx="13.660254" cy="10.490381" r="2.000000%"/>
+<line x1="0.000000" y1="0.000000" x2="-0.000000" y2="8.660254" stroke="black" stroke-width="1%"/>
+<line x1="0.000000" y1="0.000000" x2="5.000000" y2="4.330127" stroke="black" stroke-width="1%"/>
+<line x1="-0.000000" y1="8.660254" x2="5.000000" y2="4.330127" stroke="black" stroke-width="1%"/>
+<line x1="5.000000" y1="4.330127" x2="-0.000000" y2="8.660254" stroke="black" stroke-width="1%"/>
+<line x1="5.000000" y1="4.330127" x2="5.000000" y2="12.990381" stroke="black" stroke-width="1%"/>
+<line x1="-0.000000" y1="8.660254" x2="5.000000" y2="12.990381" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="6.160254" x2="8.660254" y2="-2.500000" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="6.160254" x2="13.660254" y2="1.830127" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="-2.500000" x2="13.660254" y2="1.830127" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="6.160254" x2="13.660254" y2="1.830127" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="6.160254" x2="13.660254" y2="10.490381" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="1.830127" x2="13.660254" y2="10.490381" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="-2.500000" x2="8.660254" y2="6.160254" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="-2.500000" x2="0.000000" y2="0.000000" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="6.160254" x2="0.000000" y2="0.000000" stroke="black" stroke-width="1%"/>
+<line x1="0.000000" y1="0.000000" x2="8.660254" y2="6.160254" stroke="black" stroke-width="1%"/>
+<line x1="0.000000" y1="0.000000" x2="-0.000000" y2="8.660254" stroke="black" stroke-width="1%"/>
+<line x1="8.660254" y1="6.160254" x2="-0.000000" y2="8.660254" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="13.660254" y2="1.830127" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="5.000000" y2="4.330127" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="1.830127" x2="5.000000" y2="4.330127" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="5.000000" y2="4.330127" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="5.000000" y2="12.990381" stroke="black" stroke-width="1%"/>
+<line x1="5.000000" y1="4.330127" x2="5.000000" y2="12.990381" stroke="black" stroke-width="1%"/>
+<line x1="5.000000" y1="4.330127" x2="13.660254" y2="1.830127" stroke="black" stroke-width="1%"/>
+<line x1="5.000000" y1="4.330127" x2="0.000000" y2="0.000000" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="1.830127" x2="0.000000" y2="0.000000" stroke="black" stroke-width="1%"/>
+<line x1="0.000000" y1="0.000000" x2="13.660254" y2="1.830127" stroke="black" stroke-width="1%"/>
+<line x1="0.000000" y1="0.000000" x2="8.660254" y2="-2.500000" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="1.830127" x2="8.660254" y2="-2.500000" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="5.000000" y2="12.990381" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="-0.000000" y2="8.660254" stroke="black" stroke-width="1%"/>
+<line x1="5.000000" y1="12.990381" x2="-0.000000" y2="8.660254" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="-0.000000" y2="8.660254" stroke="black" stroke-width="1%"/>
+<line x1="13.660254" y1="10.490381" x2="8.660254" y2="6.160254" stroke="black" stroke-width="1%"/>
+<line x1="-0.000000" y1="8.660254" x2="8.660254" y2="6.160254" stroke="black" stroke-width="1%"/>
+</svg>

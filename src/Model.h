@@ -76,14 +76,14 @@ class Model
 		inline int nNode(){ return nod.size(); }
 		inline int nElem(){ return ele.size(); }
 		
-		inline Node    getNode(int id){ return nod[id]; } //segue la numerzione del vettore locale
-		inline Element getElem(int id){ return ele[id]; } //segue la numerzione del vettore locale
+		inline Node    getNode(int id){ return nod[id]; } // segue la numerzione del vettore locale
+		inline Element getElem(int id){ return ele[id]; } // segue la numerzione del vettore locale
 		
-		Node    getNodeMod(int tagID); //segue la numerzione del modello
-//		Element getElemMod(lnt tagID); //segue la numerzione del modello
+		Node    getNodeMod(int tagID); // segue la numerzione del modello
+//		Element getElemMod(lnt tagID); // segue la numerzione del modello
 		
 		inline void setNode(int id, double x,double y,double z){ nod[id].setNode(x,y,z); }
-		void setNodeMod(int tagID, double x,double y,double z); //usa i tagID del modello
+		void setNodeMod(int tagID, double x,double y,double z); // usa i tagID del modello
 		
 	private:
 		std::vector<Node>    nod;
