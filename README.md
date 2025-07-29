@@ -16,6 +16,8 @@ Graphical output for FEM-like geometries
 
 - [ ] se ci sta il file .ini allora prende le informazioni da la. Altrimenti chiede all'utente angoli e spessori.
 
+- [ ] mettere anche gli assi (in fondo a tutto)
+
 <!-- DONE:
 
 
