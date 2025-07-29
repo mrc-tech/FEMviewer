@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{tikz}
+
+
+\begin{document}
+
+
+\section{Assonometria}
+
+\textcolor{red}{Mettere la teoria che ho usato per definire la rotazione $\alpha$, $\beta$.}
+
+
+\section{SVG}
+
+\subsection{\texttt{viewBox}}
+
+Il \texttt{viewBox} e` calcolato in base all'ingombro del disegno e di un offset calcolato in base alla diagonale dell'ingombro.
+
+\begin{tikzpicture}[scale=2]
+\draw[gray] (0,0) rectangle (3,2);
+\draw (-0.5,-0.5) rectangle (3.5,2.5);
+\draw[<->] (0,-0.2) -- node[below]{$w$} (3,-0.2);
+\draw[<->] (3.2,0) -- node[right]{$h$} (3.2,2);
+\draw[latex-latex] (0,2) -- node[above right]{$d$} (3,0);
+\draw[latex-, gray] (0,2) -- (0.2,2.2) node[right]{$(x_{min},y_{min})$};
+\draw[latex-, gray] (3,0) -- (3.7,-0.3) node[right]{$(x_{max},y_{max})$};
+\draw[<->] (-0.5,0.5) -- node[above]{$\Delta$} (0,0.5);
+\draw[<->] (2,2) -- node[right]{$\Delta$} (2,2.5);
+\draw[gray] (1.5,2) node[below]{geometria};
+\end{tikzpicture}
+
+La larghezza $w$ e l'altezza $h$ sono calcolate in base alle coordinate massime e minime:
+$$ w = x_{max} - x_{min} \qquad h = y_{max} - y_{min} $$
+L'offset aggiuntivo $\Delta$ e' calcolato in base ad una percentuale $p$ della diagonale $d=\sqrt{w^2+h^2}$:
+$$ \Delta = p \cdot d $$
+La percentuale $p$ e' un parametro di input del programma. Il valore standard e' $p=0.05$ (5\%).
+
+
+\subsection{Spessore linee}
+
+
+\subsection{Nodi}
+
+
+
+
+
+\end{document}
