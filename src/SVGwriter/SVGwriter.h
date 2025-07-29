@@ -38,8 +38,15 @@ void SVGwriter::write_file(std::string fName)
 {
 	std::ofstream file(fName);
 	
+	double p = 0.05;
+	
+	double w = x_max-x_min;
+	double h = y_max-y_min;
+	double d = sqrt(w*w + h*h);
+	double D = p * d;
+	
 	file << "<svg ";
-	file << "viewBox=\"" << x_min << " " << y_min << " " << x_max - x_min << " " << y_max - y_min << "\""; // AGGIUNGERE DEI BORDI IN PERCENTUALE ALLA DIMENSIONE DELL'IMMAGINE
+	file << "viewBox=\"" << x_min-D << " " << y_min-D << " " << w + 2*D << " " << h + 2*D << "\"";
 	file << " xmlns=\"http://www.w3.org/2000/svg\">" << std::endl; // header finale standard
 	for(auto x : lines) file << x << std::endl;
 	file << "</svg>";
