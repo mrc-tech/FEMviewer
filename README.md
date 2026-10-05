@@ -20,6 +20,8 @@ Graphical output for FEM-like geometries
 - [ ] Fare anche un opzione che stampa l'ID dei nodi
 - [ ] scalimetro?
 
+- [ ] mettere delle linee piu spesse bianche sotto per mostrare gli elementi che stanno più avanti? però devo elencare gli elementi rispetto al depth field
+
 <!-- DONE:
 
 
